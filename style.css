@@ -1,0 +1,137 @@
+/* Общие стили для всего сайта */
+body {
+    font-family: 'Arial', sans-serif; /* Красивый шрифт */
+    margin: 0;
+    padding: 0;
+    background-color: #f9f3f3; /* Нежный розовый фон */
+    color: #333; /* Цвет текста */
+    line-height: 1.6;
+}
+
+/* Шапка сайта */
+header {
+    background: linear-gradient(135deg, #ffafbd, #ffc3a0); /* Красивый градиент */
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Основное содержимое */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Секция с воспоминаниями */
+.memory-section {
+    margin-bottom: 60px;
+}
+
+.memory-section h2 {
+    text-align: center;
+    color: #d46a8b; /* Нежный розовый цвет для заголовков */
+    border-bottom: 2px solid #ffc3a0;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+/* Сетка для фотографий */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Автоматическая сетка */
+    gap: 20px; /* Расстояние между фото */
+}
+
+.photo-grid img {
+    width: 100%; /* Фото занимает всю ширину ячейки */
+    height: 250px; /* Фиксированная высота для аккуратности */
+    object-fit: cover; /* Обрезает фото, чтобы оно вписалось */
+    border-radius: 10px; /* Закругленные углы */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Легкая тень */
+    transition: transform 0.3s ease; /* Плавное увеличение при наведении */
+}
+
+.photo-grid img:hover {
+    transform: scale(1.03); /* Фото немного увеличивается при наведении курсора */
+}
+
+/* Секция с пожеланием */
+.wish-section {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-top: 50px;
+}
+
+.wish-section h2 {
+    color: #d46a8b;
+}
+
+/* Подвал сайта */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 50px;
+}
+/* Стили для блоков с историями */
+.story-block {
+    background: white;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    border-left: 4px solid #ffafbd;
+}
+
+.story-block h3 {
+    color: #d46a8b;
+    margin-top: 0;
+}
+
+.memory-text {
+    font-style: italic;
+    color: #666;
+    margin-top: 10px;
+    text-align: center;
+}
+/* Стиль для текста про Даню */
+.daneka {
+    font-size: 1.3em;
+    color: #ff6b94;
+    font-weight: bold;
+    text-align: center;
+    margin: 15px 0;
+}
+
+/* Для главного фото в шапке */
+.main-dan-photo {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.main-dan-photo img {
+    border: 3px solid #ffafbd;
+    box-shadow: 0 5px 15px rgba(255, 107, 148, 0.3);
+}
+
+.photo-with-caption {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}

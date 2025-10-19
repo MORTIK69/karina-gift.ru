@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <audio loop><source src="music.mp3" type="audio/mpeg"></audio>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корешу от братана</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+    // Ждем полной загрузки страницы
+    document.addEventListener('DOMContentLoaded', function() {
+        var music = document.getElementById('backgroundMusic');
+        var button = document.getElementById('musicButton');
+        var status = document.getElementById('musicStatus');
+        
+        // Пробуем предзагрузить музыку
+        music.load();
+        
+        // Функция переключения музыки
+        window.toggleMusic = function() {
+            if (music.paused) {
+                music.play().then(function() {
+                    button.textContent = '🔇 Выключить музыку';
+                    status.textContent = 'Музыка играет';
+                    status.style.color = '#4CAF50';
+                }).catch(function(error) {
+                    status.textContent = 'Ошибка: не удалось воспроизвести музыку';
+                    status.style.color = 'red';
+                    console.log('Ошибка воспроизведения:', error);
+                });
+            } else {
+                music.pause();
+                button.textContent = '🎵 Включить музыку';
+                status.textContent = 'Музыка на паузе';
+                status.style.color = '#666';
+            }
+        }
+        
+        // Обработчики событий для музыки
+        music.addEventListener('canplay', function() {
+            status.textContent = 'Музыка готова к воспроизведению';
+            status.style.color = '#2196F3';
+        });
+        
+        music.addEventListener('error', function() {
+            status.textContent = 'Ошибка загрузки музыки. Проверьте файл.';
+            status.style.color = 'red';
+        });
+    });
+</script>
+<body>
+
+    <header>
+        <h1>Для моей любимой сестры Карины ❤️</h1>
+        <p>Тут я попытался собрать наши с тобой фото и воспоминания</p>
+    <div class="music-player">
+        <button id="musicButton" onclick="toggleMusic()">🎵 Включить музыку</button>
+        <audio id="backgroundMusic" loop preload="auto">
+            <source src="music.mp3" type="audio/mpeg">
+            <source src="music.ogg" type="audio/ogg">
+            Ваш браузер не поддерживает аудио элемент.
+        </audio>
+        <p id="musicStatus" style="color: #666; font-size: 14px; margin: 5px 0 0 0;">Музыка готова к воспроизведению</p>
+    </div>
+    </header>
+
+    <main>
+        <section class="memory-section">
+            <h2>Я огонь,ты вода </h2>
+            <div class="photo-grid">
+                <img src="images/detstvo1.jpg" alt="фоточка1">
+                <img src="images/detstvo2.jpg" alt="фоточка2">
+                <img src="images/detstvo3.jpg" alt="фоточка3">
+                <img src="images/detstvo4.jpg" alt="фоточка4">
+            </div>
+        </section>
+
+        <section class="memory-section">
+            <h2>Наши встречи</h2>
+            <div class="photo-grid">
+                <img src="images/vm1.jpg" alt="Катя ты и я">
+                <img src="images/vm2.jpg" alt="чота нада вставить">
+            </div>
+        </section>
+
+        <section class="memory-section">
+            <h2>Лучшие моменты</h2>
+            <div class="photo-grid">
+                <img src="images/m1.jpg" alt="Угар">
+                <img src="images/m2.jpg" alt="Гуляем">
+            </div>
+        </section>
+
+        <section class="memory-section">
+            <h2>Выдра и ее Енот 💑</h2>
+            <p class="daneka">Здесь место для фотографий самого счастливого человека с самым лучшим парнем! 💕</p>
+            <div class="photo-grid">
+                <img src="images/dan1.jpg" alt="Карина и Даня">
+            <div class="photo-item">
+                <img src="images/dan2.jpg" alt="Карина и Даня">
+            <p class="caption">от счастья не за горами, до Красной площади</p>
+            </div>
+                <img src="images/dan3.jpg" alt="Карина и Даня">
+                <img src="images/dan4.jpg" alt="Карина и Даня">
+            </div>
+        </section>
+
+        <section class="memory-section">
+            <h2>А еще мне есть что сказать</h2>
+            <div class="story-block">
+                <h3>Ну Даня тут помог</h3>
+                <p>Енот</p>
+                <p>Сначала мы поехали в мой край родной, а после вернулись в спб и резко решили, что нам мало путешествий и прыгнули в карш с другом до москвы в этот же день</p>
+            </div>
+            
+            <div class="story-block">
+                <h3>Как ты очень сильно помогла мне</h3>
+                <p>Влад</p>
+                <p>Карина ты очень сильно помогла мне подарила светлые мысли и обьяснила очень многое спасибо тебе большое </p>
+            </div>
+            
+            <div class="story-block">
+                <h3>Мне есть что сказать</h3>
+                <p>Влад</p>
+                <p>Я никогда не пожелею что знаком с тобой хоть ты и старше на 4 года ты проводила со мной время и брала с собой гулять об этом мечтают многие дети у которых есть старшие братья и сестры большое тебе спасибо за твои советы, слова и поступки </p>
+            </div>
+        </section>
+
+        <section class="wish-section">
+            <h2>Карина, ты лучшая!</h2>
